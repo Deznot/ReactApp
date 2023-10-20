@@ -3,8 +3,9 @@ import "./employees-list.css";
 
 const EmployeesList = ({ data }) => {
     const elements = data.map(item => {
+        const {id, ...itemProps} = item;
         return (
-            <EmployeesListItem {...item} className={item.increase ? "increase" : ""} />
+            <EmployeesListItem key={id}{...itemProps}/>
         );
     });
 
