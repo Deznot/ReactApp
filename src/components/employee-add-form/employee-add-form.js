@@ -17,6 +17,21 @@ class EmployeeAddForm extends Component {
         })
     };
 
+    submitHundler = (e) => {
+        e.preventDefault();
+        const {name,salary} = this.state;
+        const {addEmployee} = this.props;
+        let resObj = {
+            name: name,
+            salary: salary
+        }
+        this.setState(({name,salary}) => ({
+            name: "",
+            salary: ""
+        }))
+        return addEmployee(resObj);
+       
+    };
 
     render() {
         const {name,salary} = this.state;
@@ -24,8 +39,9 @@ class EmployeeAddForm extends Component {
             <div className="app-add-form">
                 <h3>Добавьте нового сотрудника</h3>
                 <form 
-                    action="" 
-                    className="add-form d-flex">
+                    // action="" 
+                    className="add-form d-flex"
+                    onSubmit={this.submitHundler}>
                     <input 
                         type="text" 
                         className="form-control new-post-label" 
