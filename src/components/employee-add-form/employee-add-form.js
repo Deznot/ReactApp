@@ -21,6 +21,8 @@ class EmployeeAddForm extends Component {
         e.preventDefault();
         const {name,salary} = this.state;
         const {addEmployee} = this.props;
+        
+        if (name.length < 3 || !salary.length) return;
         let resObj = {
             name: name,
             salary: salary
@@ -30,7 +32,7 @@ class EmployeeAddForm extends Component {
             salary: ""
         }))
         return addEmployee(resObj);
-       
+        
     };
 
     render() {

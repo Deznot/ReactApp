@@ -42,28 +42,6 @@ class App extends Component {
         })
     }
 
-    // onTogglePromotion = (id) => {
-    //     this.setState(({data}) => ({
-    //         data: data.map((item) => {
-    //             if (item.id === id) {
-    //                 return {...item, promotion : !item.promotion};
-    //             }
-    //             return item;
-    //         })
-    //     }));
-    // }
-
-    // onToggleIncrease = (id) => {
-        // this.setState(({data}) => ({
-        //     data: data.map((item) => {
-        //         if (item.id === id) {
-        //             return {...item, increase : !item.increase};
-        //         }
-        //         return item;
-        //     })
-        // }));
-    // }
-
     onToggleProp = (id, prop) => {
         this.setState(({data}) => ({
             data: data.map((item) => {
