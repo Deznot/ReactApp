@@ -6,12 +6,13 @@ class EmployeesListItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            salaryVal: this.props.salary
+            salaryVal: this.props.salary + "$"
         }
     }
 
     onChangeSalary = (e) => {
         let val = e.target.value;
+        val = val.indexOf('$') > -1 ? val : val += "$";
         this.setState(() => ({
             salaryVal: val
         }))
